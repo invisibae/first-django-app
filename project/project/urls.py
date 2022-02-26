@@ -20,3 +20,4 @@ urlpatterns = [
   path('expenses/', include('expenses.urls')),
   path('admin/', admin.site.urls),
 ]
+# hello views
