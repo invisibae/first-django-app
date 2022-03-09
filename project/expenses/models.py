@@ -1,5 +1,12 @@
 from django.db import models
 
+class Category(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
 # Create your models here. # This creates a model and that model will inherit the traits of a generic model
 class Summary(models.Model): # tells us generically that we are looking at a model # tells us that the model has variables with behaviors
       bioguide_id = models.CharField(max_length=7)
