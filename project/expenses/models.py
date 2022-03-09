@@ -11,6 +11,9 @@ class Summary(models.Model): # tells us generically that we are looking at a mod
       year = models.IntegerField()
       quarter = models.IntegerField()
 
+      def __str__(self):
+          return self.program
+
 class Detail(models.Model):
     bioguide_id = models.CharField(max_length=7)
     office = models.CharField(max_length=500)
@@ -27,3 +30,6 @@ class Detail(models.Model):
     purpose = models.CharField(max_length=500)
     amount = models.DecimalField(max_digits=20, decimal_places=2)
     year = models.IntegerField()
+
+    def __str__(self):
+          return self.payee
