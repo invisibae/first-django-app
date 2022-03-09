@@ -12,5 +12,5 @@ class Command(BaseCommand):
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
             if row['CATEGORY'] != '':
-                obj = Category.objects.create(name=row['CATEGORY'], slug=slugify(row['CATEGORY']))
+                obj = Category.objects.get_or_create(name=row['CATEGORY'], slug=slugify(row['CATEGORY']))
                 print(obj)
