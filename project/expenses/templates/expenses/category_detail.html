@@ -3,9 +3,15 @@
   <head></head>
   <body>
     <h1>House Office Expenses - {{ category.name|title }}</h1>
+    <h3>Top 5</h3>
+    <ol>
+        {% for summary in top_5_summaries %}
+            <li>{{ summary.office|title}} - {{ summary.amount }}</li>
+        {% endfor %}
+    </ol>
 
-    <p>Summary records: {{ summary_count }}</p>
     <p>Detail records: {{ category_detail }}</p>
+    <p>Summary Count: {{ summary_count }}</p>
 
   </body>
 </html>
